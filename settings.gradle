@@ -1,5 +1,5 @@
 rootProject.name = 'Melchior'
 
-include 'melchior-experimental'
 include 'melchior-core'
+include 'melchior-swing'
 

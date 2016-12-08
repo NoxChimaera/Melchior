@@ -80,7 +80,8 @@ public class MelchiorClassContext {
             }
 
             String label = f.label().trim().isEmpty() ? toReadable(field.getName()) : f.label();
-            MelchiorFieldContext ctx = new MelchiorFieldContext(field.getName(), label, getter, setter, f.readOnly(), f.order());
+            MelchiorFieldContext ctx = new MelchiorFieldContext(field.getType(), field.getName(), label, getter, setter, f.readOnly(), f.order());
+            fieldContext.add(ctx);
         }
         return new MelchiorClassContext(ofClass, fieldContext);
     }

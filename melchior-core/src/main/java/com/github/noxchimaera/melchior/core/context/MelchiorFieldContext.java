@@ -26,6 +26,11 @@ import java.lang.reflect.Method;
 public class MelchiorFieldContext {
 
     /**
+     * Field type;
+     */
+    private Class fieldType;
+
+    /**
      * Name of the field.
      */
     private String name;
@@ -62,13 +67,23 @@ public class MelchiorFieldContext {
      * @param readonly whether field is read only
      * @param order    field order
      */
-    public MelchiorFieldContext(String name, String label, Method getter, Method setter, boolean readonly, int order) {
+    public MelchiorFieldContext(Class fieldType, String name, String label, Method getter, Method setter, boolean readonly, int order) {
+        this.fieldType = fieldType;
         this.name = name;
         this.label = label;
         this.getter = getter;
         this.setter = setter;
         this.readonly = readonly;
         this.order = order;
+    }
+
+    /**
+     * Returns field type.
+     *
+     * @return field type
+     */
+    public Class getFieldType() {
+        return fieldType;
     }
 
     /**
